@@ -12,12 +12,7 @@ const NavBar = () => {
     <li>
       <a href="/">Home</a>
     </li>
-    <li>
-      <a href="/about">About</a>
-    </li>
-    <li>
-      <a href="/contact">Contact</a>
-    </li>
+
   </ul>
   <a href="https://discord.gg/zMMyrQz89d" className="navbar-button">Discord Support Server</a>
 </nav>

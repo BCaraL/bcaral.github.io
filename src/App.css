@@ -103,11 +103,18 @@
 .navbar-button {
   text-decoration: none;
   padding: 10px 20px;
-  background-color: #B43C24;
+  background-color: #570C0C;
   color: #fff;
-  border: 1px solid #570C0C; /* Adding the border style and width */
+  border: 2px solid #B43C24;
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Adding transitions for smooth effects */
+}
+
+.navbar-button:hover {
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+  transform: scale(1.1); /* Scale the button to 110% on hover */
 }
 
 /* App.js */

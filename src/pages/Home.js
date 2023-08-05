@@ -24,58 +24,42 @@ const Home = () => {
   return (
     <div style={{ background: '#332A2B', minHeight: '100vh', color: 'white' }}>
       <NavBar />
-      <div className="App">
-        <img src={banner} alt="Banner" className="App-banner" />
-
+      <div className="App"><div style={{ position: 'relative', width: '100%', height: '100%' }}>
+        <img src={banner} alt="Banner" className="App-banner" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
 
         <div style={{
-          paddingTop: '10px', position: 'absolute',
-          bottom: '20%',
+          position: 'absolute',
+          bottom: '40px',
           left: '50%',
-          transform: 'translate(-50%, -50%)',
+          transform: 'translateX(-50%)',
           color: 'white',
           fontSize: '32px',
           zIndex: '1',
+          textAlign: 'center',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+          width: '100%',
         }}>
 
-          <     img src={apex_bullet} alt="Logo" style={{ width: '80px' }} />
-
+          <img src={apex_bullet} alt="Logo" style={{ width: '80px' }} />
 
           <div style={{ paddingTop: '30px' }}>
             Try Our Exclusive<br />
           </div>
 
           <div style={{ paddingTop: '10px' }}>
-            <a
-              href='#section-main'
-              style={{
-                color: '#CCCCCC',
-                textDecoration: 'none',
-                fontWeight: 'bold',
-                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-              }}
-            >
+            <a href='#section-main' style={{ color: '#CCCCCC', textDecoration: 'none', fontWeight: 'bold' }}>
               Discord Bot
             </a>{' '}
             or{' '}
-            <a
-              href='#section-main'
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: '#CCCCCC',
-                textDecoration: 'none', // Remove the underline
-                fontWeight: 'bold',
-                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-              }}
-            >
+            <a href='#section-main' target="_blank" rel="noopener noreferrer" style={{ color: '#CCCCCC', textDecoration: 'none', fontWeight: 'bold' }}>
               Alexa Skill
             </a>
           </div>
-
         </div>
+      </div>
 
-        <div id='section-main' style={{  display: 'flex', justifyContent: 'center', fontSize: '30px', paddingTop: '30px' }}>
+
+        <div id='section-main' style={{ display: 'flex', justifyContent: 'center', fontSize: '30px', paddingTop: '30px' }}>
           The Ultimate Companion for Apex Legends Enthusiasts
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', padding: '30px', fontSize: '18px' }}>
@@ -140,28 +124,28 @@ const Home = () => {
           </div>
         </div>
 
-        <div style={{ fontSize: '30px', fontWeight: 'bold', paddingTop:'20px' }}>About  </div>
+        <div style={{ fontSize: '30px', fontWeight: 'bold', paddingTop: '20px' }}>About  </div>
 
         <div style={{ display: 'flex', justifyContent: 'center', width: '100%', padding: '40px', borderBottom: '1px solid #4D3F41' }}>
-       
-          <div style={{ marginLeft: '90px', width:'40%'  }}>
-          <img src={apex_ss_status} alt="Logo" style={{verticalAlign: 'top' }} />
-          </div>
-          <div style={{ marginRight: '90px', width:'40%' }}>
-          Real time status for map rotation including the current map and the minutes remaining.<br /><br />
-            WINGMAN provides pubs map information <br/> NEMESIS provides ranked map information.<br/> Add them both to your server to provide the full experience.
-          
-          </div>
-          </div>
 
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', padding: '30px' }}>
-  <div style={{ marginLeft: '90px', width: '40%' }}>
-    Type '/map' to find out the current map, its duration and what map will be next for all game modes including pubs, ranked or LTM (Limited Time Mode).
-  </div>
-  <div style={{ marginRight: '90px', width: '40%' }}>
-    <img src={apex_ss_map} alt="Logo" style={{ verticalAlign: 'top' }} />
-  </div>
-</div>
+          <div style={{ marginLeft: '90px', width: '40%' }}>
+            <img src={apex_ss_status} alt="Logo" style={{ verticalAlign: 'top' }} />
+          </div>
+          <div style={{ marginRight: '90px', width: '40%' }}>
+            Real time status for map rotation including the current map and the minutes remaining.<br /><br />
+            WINGMAN provides pubs map information <br /> NEMESIS provides ranked map information.<br /> Add them both to your server to provide the full experience.
+
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', padding: '30px' }}>
+          <div style={{ marginLeft: '90px', width: '40%' }}>
+            Type '/map' to find out the current map, its duration and what map will be next for all game modes including pubs, ranked or LTM (Limited Time Mode).
+          </div>
+          <div style={{ marginRight: '90px', width: '40%' }}>
+            <img src={apex_ss_map} alt="Logo" style={{ verticalAlign: 'top' }} />
+          </div>
+        </div>
 
 
 

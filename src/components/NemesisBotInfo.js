@@ -21,7 +21,10 @@ const NemesisBotInfo = () => {
           borderRadius: '5px',
           fontWeight: 'bold',
           textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+          transition: 'box-shadow 0.3s ease', /* Adding a transition for smooth hover effect */
         }}
+        onMouseOver={(e) => e.target.style.boxShadow = '4px 4px 8px rgba(0, 0, 0, 0.7)'} /* Shadow effect on hover */
+        onMouseOut={(e) => e.target.style.boxShadow = '2px 2px 4px rgba(0, 0, 0, 0.5)'} /* Reset shadow on hover out */
       >
         Invite to Your Server
       </a>
