@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.1ddb1aeb.css",
-    "main.js": "./static/js/main.3f23623e.js",
+    "main.css": "./static/css/main.c1f766c4.css",
+    "main.js": "./static/js/main.ae5b37ef.js",
     "static/js/787.dbd4748e.chunk.js": "./static/js/787.dbd4748e.chunk.js",
     "static/media/wingman-banner-2.png": "./static/media/wingman-banner-2.a0488c69dfcb5551eb2f.png",
     "static/media/WINGMAN_SS_1.png": "./static/media/WINGMAN_SS_1.90c54464bb495524bc60.png",
@@ -12,12 +12,12 @@
     "static/media/nemesis-logo.png": "./static/media/nemesis-logo.7091b51ea217e6e90e67.png",
     "static/media/discord_logo.png": "./static/media/discord_logo.667df059ddf407979d68.png",
     "index.html": "./index.html",
-    "main.1ddb1aeb.css.map": "./static/css/main.1ddb1aeb.css.map",
-    "main.3f23623e.js.map": "./static/js/main.3f23623e.js.map",
+    "main.c1f766c4.css.map": "./static/css/main.c1f766c4.css.map",
+    "main.ae5b37ef.js.map": "./static/js/main.ae5b37ef.js.map",
     "787.dbd4748e.chunk.js.map": "./static/js/787.dbd4748e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ddb1aeb.css",
-    "static/js/main.3f23623e.js"
+    "static/css/main.c1f766c4.css",
+    "static/js/main.ae5b37ef.js"
   ]
 }
