@@ -10,7 +10,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://4sleu2xbii.execute-api.us-east-1.amazonaws.com/prod', {
+      const response = await fetch('https://0exrcenkuf.execute-api.us-east-1.amazonaws.com/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
