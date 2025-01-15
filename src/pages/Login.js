@@ -8,9 +8,12 @@ const Login = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("SUBMIT")
+    const URL = 'https://tgjqek8cia.execute-api.us-east-1.amazonaws.com/'
+    console.log(URL)
 
     try {
-      const response = await fetch('https://0exrcenkuf.execute-api.us-east-1.amazonaws.com/', {
+      const response = await fetch(URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -19,6 +22,7 @@ const Login = () => {
       });
 
       const result = await response.json();
+      console.log(result)
 
       if (response.ok) {
         setMessage('Player name saved successfully!');
