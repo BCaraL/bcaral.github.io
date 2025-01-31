@@ -1,16 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App.css';
 
 const Login = () => {
   const [playerName, setPlayerName] = useState('');
+  const [id, setUserId] = useState('');
   const [message, setMessage] = useState('');
+
+  // Extract userId from the query parameters
+  useEffect(() => {
+    const hash = window.location.hash; // Example: #/login?id=6269845a
+    console.log("Window location hash:", hash);
+  
+    const queryString = hash.includes('?') ? hash.split('?')[1] : '';
+    console.log("Query string from hash:", queryString);
+  
+    const params = new URLSearchParams(queryString);
+    const extractedUserId = params.get('id');
+    console.log("Extracted User ID:", extractedUserId);
+  
+    if (extractedUserId) {
+      setUserId(extractedUserId);
+    } else {
+      setMessage('ID not found in the URL. Please try again.');
+    }
+  }, []);
+  
 
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("SUBMIT")
-    const URL = 'https://tgjqek8cia.execute-api.us-east-1.amazonaws.com/'
-    console.log(URL)
+
+    const URL = 'https://tgjqek8cia.execute-api.us-east-1.amazonaws.com/';
 
     try {
       const response = await fetch(URL, {
@@ -18,12 +38,10 @@ const Login = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ playerName }),
+        body: JSON.stringify({ playerName, id }),
       });
 
       const result = await response.json();
-      console.log(result)
-
       if (response.ok) {
         setMessage('Player name saved successfully!');
       } else {
