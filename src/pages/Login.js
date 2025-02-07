@@ -3,12 +3,12 @@ import '../App.css';
 
 const Login = () => {
   const [playerName, setPlayerName] = useState('');
+  const [platform, setPlatform] = useState('PC'); // Default to PC
   const [id, setUserId] = useState('');
   const [message, setMessage] = useState('');
 
-  // Extract userId from the query parameters
   useEffect(() => {
-    const hash = window.location.hash; // Example: #/login?id=6269845a
+    const hash = window.location.hash;
     console.log("Window location hash:", hash);
   
     const queryString = hash.includes('?') ? hash.split('?')[1] : '';
@@ -24,9 +24,7 @@ const Login = () => {
       setMessage('ID not found in the URL. Please try again.');
     }
   }, []);
-  
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -38,12 +36,12 @@ const Login = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ playerName, id }),
+        body: JSON.stringify({ playerName, platform, id }),
       });
 
       const result = await response.json();
       if (response.ok) {
-        setMessage('Player name saved successfully!');
+        setMessage('Player name and platform saved successfully!');
       } else {
         setMessage('Error: ' + result.message);
       }
@@ -57,10 +55,13 @@ const Login = () => {
     <div style={{ background: '#332A2B', minHeight: '100vh', color: 'white' }}>
       <div style={{ padding: '20px', maxWidth: '400px', margin: 'auto' }}>
         <h2>Link Your Player Name</h2>
+        <br/>
         <p>Enter your player name below to link it with your Alexa skill:</p>
+        <br/>
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: '10px' }}>
             <label htmlFor="playerName">Player Name</label>
+            <br/>
             <input
               type="text"
               id="playerName"
@@ -70,6 +71,19 @@ const Login = () => {
               placeholder="Enter your player name"
               required
             />
+          </div>
+          <div style={{ marginBottom: '10px' }}>
+            <label htmlFor="platform">Platform</label>
+            <select
+              id="platform"
+              value={platform}
+              onChange={(e) => setPlatform(e.target.value)}
+              style={{ width: '100%', padding: '8px', margin: '5px 0', borderRadius: '4px' }}
+            >
+              <option value="PC">PC (Origin or Steam)</option>
+              <option value="Playstation">PlayStation</option>
+              <option value="Xbox">Xbox</option>
+            </select>
           </div>
           <button
             type="submit"
